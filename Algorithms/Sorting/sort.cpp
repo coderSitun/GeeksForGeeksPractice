@@ -1,5 +1,16 @@
 #include "sort.hpp"
+#include "selectionSort.hpp"
+#include "bubbleSort.hpp"
+
 #include<iostream>
+
+Sort* Sort::getSortingClass(std::string name){
+    if(name == "selection")
+        return new SelectionSort();
+    else if(name == "bubble")
+        return new BubbleSort();
+    return nullptr;
+}
 
 void Sort::swapElements(int index1, int index2){
     int temp = elements[index1];
