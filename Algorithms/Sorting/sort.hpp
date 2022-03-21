@@ -4,7 +4,7 @@
 #include<vector>
 
 class Sort{
-private:
+protected:
     std::vector<int> elements;
 public:
     void insert(int element);
