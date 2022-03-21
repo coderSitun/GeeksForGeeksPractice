@@ -1,6 +1,12 @@
 #include "sort.hpp"
 #include<iostream>
 
+void Sort::swapElements(int index1, int index2){
+    int temp = elements[index1];
+    elements[index1] = elements[index2];
+    elements[index2] = temp;
+}
+
 void Sort::insert(int element){
     elements.push_back(element);
 }
