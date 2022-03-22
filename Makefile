@@ -1,4 +1,4 @@
-all: main sort selectionSort bubbleSort
+all: main sort
 	g++ build/* -o run/app
 
 build:
@@ -13,7 +13,7 @@ selectionSort:
 bubbleSort:
 	g++ -o build/bubbleSort.o -c Algorithms/Sorting/BubbleSort/bubbleSort.cpp -I Algorithms/Sorting/
 
-sort:
+sort: selectionSort bubbleSort
 	g++ -o build/sort.o -c Algorithms/Sorting/sort.cpp -I Algorithms/Sorting/ -I Algorithms/Sorting/SelectionSort/ -I Algorithms/Sorting/BubbleSort/
 
 main: build
