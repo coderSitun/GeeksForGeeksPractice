@@ -1,4 +1,4 @@
-all: main sort
+all: run main sort
 	g++ build/* -o run/app
 
 build:
