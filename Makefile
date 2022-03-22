@@ -1,5 +1,11 @@
+all: main sort selectionSort bubbleSort
+	g++ build/* -o run/app
+
 build:
 	mkdir build
+
+run:
+	mkdir run
 
 selectionSort:
 	g++ -o build/selectionSort.o -c Algorithms/Sorting/SelectionSort/selectionSort.cpp -I Algorithms/Sorting/
@@ -12,3 +18,6 @@ sort:
 
 main: build
 	g++ -o build/main.o -c test/main.cpp -I Algorithms/Sorting/
+
+clean: build run
+	rm build/* run/*
