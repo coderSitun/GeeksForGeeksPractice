@@ -6,6 +6,7 @@ struct Node{
     Node *next;
     Node(int data = 0);
     Node(int data, Node *next);
+    Node* deleteNode();
 };
 
 #endif

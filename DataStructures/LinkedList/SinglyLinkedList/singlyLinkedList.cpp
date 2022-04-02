@@ -64,3 +64,9 @@ bool SinglyLinkedList::deleteNode(Node *node){
     }
     return false;
 }
+
+void SinglyLinkedList::deleteCompleteLinkedList(){
+    while(head != nullptr){
+        head = head->deleteNode();
+    }
+}

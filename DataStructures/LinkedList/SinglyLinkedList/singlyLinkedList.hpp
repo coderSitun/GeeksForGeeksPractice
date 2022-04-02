@@ -12,6 +12,7 @@ public:
     void insertAtEnd(int data);
     Node* getNodeWithData(int data);
     bool deleteNode(Node *node);
+    void deleteCompleteLinkedList();
 };
 
 #endif
