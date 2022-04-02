@@ -10,6 +10,8 @@ public:
     SinglyLinkedList();
     bool insert(int data, int after = 0);
     void insertAtEnd(int data);
+    Node* getNodeWithData(int data);
+    bool deleteNode(Node *node);
 };
 
 #endif

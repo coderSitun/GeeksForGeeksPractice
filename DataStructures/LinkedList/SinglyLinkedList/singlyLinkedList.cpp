@@ -34,3 +34,33 @@ void SinglyLinkedList::insertAtEnd(int data){
         current->next = new Node(data);
     }
 }
+
+Node* SinglyLinkedList::getNodeWithData(int data){
+    Node *current = head;
+    while(current != nullptr){
+        if(data == current->data)
+            return current;
+        current = current->next;
+    }
+    return nullptr;
+}
+
+bool SinglyLinkedList::deleteNode(Node *node){
+    if(node != nullptr){
+        if(head == node){
+            head = head->next;
+        }
+        else{
+            Node *current = head;
+            while((current != nullptr) && (current->next != node)){
+                current = current->next;
+            }
+            if(current == nullptr)
+                return false;
+            current->next = node->next;
+        }
+        delete node;
+        return true;
+    }
+    return false;
+}
