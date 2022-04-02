@@ -8,6 +8,7 @@ private:
     Node *head;
 public:
     SinglyLinkedList();
+    bool insert(int data, int after = 0);
 };
 
 #endif
