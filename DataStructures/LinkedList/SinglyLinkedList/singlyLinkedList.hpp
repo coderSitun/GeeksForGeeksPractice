@@ -9,6 +9,7 @@ private:
 public:
     SinglyLinkedList();
     bool insert(int data, int after = 0);
+    void insertAtEnd(int data);
 };
 
 #endif

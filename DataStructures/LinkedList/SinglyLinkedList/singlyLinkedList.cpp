@@ -22,3 +22,15 @@ bool SinglyLinkedList::insert(int data, int after){
     }
     return true;
 }
+
+void SinglyLinkedList::insertAtEnd(int data){
+    if(head == nullptr){
+        head = new Node(data);
+    }
+    else{
+        Node *current = head;
+        while(current->next != nullptr)
+            current = current->next;
+        current->next = new Node(data);
+    }
+}
