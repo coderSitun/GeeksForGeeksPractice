@@ -81,6 +81,16 @@ int SinglyLinkedList::size(){
     return size;
 }
 
+Node* SinglyLinkedList::getNthNode(int n){
+    Node *current = head;
+    for(int i = 1; i < n; ++i){
+        if(current == nullptr)
+            break;
+        current = current->next;
+    }
+    return current;
+}
+
 Node* SinglyLinkedList::getNthNodeFromEnd(int n){
     Node *slow, *fast;
     slow = fast = head;

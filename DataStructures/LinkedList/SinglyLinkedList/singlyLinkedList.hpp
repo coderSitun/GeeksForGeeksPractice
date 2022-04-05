@@ -14,6 +14,7 @@ public:
     bool deleteNode(Node *node);
     void deleteCompleteLinkedList();
     int size();
+    Node* getNthNode(int n);
     Node* getNthNodeFromEnd(int n);
 };
 
