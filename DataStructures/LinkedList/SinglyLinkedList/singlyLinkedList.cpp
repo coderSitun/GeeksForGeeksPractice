@@ -1,4 +1,5 @@
 #include"singlyLinkedList.hpp"
+#include<unordered_set>
 
 SinglyLinkedList::SinglyLinkedList(){
     head = nullptr;
@@ -123,4 +124,40 @@ int SinglyLinkedList::getDataCount(int data){
         count += (current->data == data);
     }
     return count;
+}
+
+bool SinglyLinkedList::detectLoop(LoopDetectionMethod method){
+    switch(method)
+    {
+        case HASH_METHOD:
+            return detectLoopHashMethod();
+        case POINTER_METHOD:
+            return detectLoopPointerMethod();
+    }
+    return false;
+}
+
+bool SinglyLinkedList::detectLoopHashMethod(){
+    std::unordered_set<Node*> visited;
+    Node *current = head;
+    while(current != nullptr){
+        if(visited.find(current) == visited.end()){
+            visited.insert(current);
+        }
+        else
+            return true;
+    }
+    return false;
+}
+
+bool SinglyLinkedList::detectLoopPointerMethod(){
+    Node *slow, *fast;
+    slow = fast = head;
+    while((fast != nullptr) && (fast->next != nullptr)){
+        slow = slow->next;
+        fast = fast->next->next;
+        if(slow == fast)
+            return true;
+    }
+    return false;
 }

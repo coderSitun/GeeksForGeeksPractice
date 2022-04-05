@@ -6,6 +6,12 @@
 class SinglyLinkedList{
 private:
     Node *head;
+    enum LoopDetectionMethod{
+        HASH_METHOD,
+        POINTER_METHOD
+    };
+    bool detectLoopHashMethod();
+    bool detectLoopPointerMethod();
 public:
     SinglyLinkedList();
     bool insert(int data, int after = 0);
@@ -18,6 +24,7 @@ public:
     Node* getNthNodeFromEnd(int n);
     Node* getMiddleNode();
     int getDataCount(int data);
+    bool detectLoop(LoopDetectionMethod method);
 };
 
 #endif
