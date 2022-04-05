@@ -70,3 +70,13 @@ void SinglyLinkedList::deleteCompleteLinkedList(){
         head = head->deleteNode();
     }
 }
+
+int SinglyLinkedList::size(){
+    Node *current = head;
+    int size = 0;
+    while(current != nullptr){
+        ++size;
+        current = current->next;
+    }
+    return size;
+}
