@@ -115,3 +115,12 @@ Node* SinglyLinkedList::getMiddleNode(){
     }
     return slow;
 }
+
+int SinglyLinkedList::getDataCount(int data){
+    Node *current = head;
+    int count = 0;
+    while(current != nullptr){
+        count += (current->data == data);
+    }
+    return count;
+}

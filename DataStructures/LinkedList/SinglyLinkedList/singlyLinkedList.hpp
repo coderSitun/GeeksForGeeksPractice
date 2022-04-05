@@ -17,6 +17,7 @@ public:
     Node* getNthNode(int n);
     Node* getNthNodeFromEnd(int n);
     Node* getMiddleNode();
+    int getDataCount(int data);
 };
 
 #endif
