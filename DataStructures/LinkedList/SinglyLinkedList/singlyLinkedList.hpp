@@ -16,6 +16,7 @@ public:
     int size();
     Node* getNthNode(int n);
     Node* getNthNodeFromEnd(int n);
+    Node* getMiddleNode();
 };
 
 #endif
