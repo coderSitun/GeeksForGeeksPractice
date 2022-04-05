@@ -80,3 +80,18 @@ int SinglyLinkedList::size(){
     }
     return size;
 }
+
+Node* SinglyLinkedList::getNthNodeFromEnd(int n){
+    Node *slow, *fast;
+    slow = fast = head;
+    for(int i = 0; i < n; ++i){
+        if(fast == nullptr)
+            return nullptr;
+        fast = fast->next;
+    }
+    while(fast != nullptr){
+        slow = slow->next;
+        fast = fast->next;
+    }
+    return slow;
+}
