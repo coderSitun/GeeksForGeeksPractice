@@ -3,7 +3,7 @@
 
 #include"main.hpp"
 
-BaseType getBaseType(char *input){
+BaseType MainHelp::getBaseType(char *input){
     if(!strcmp(input, "Algorithms") || !strcmp(input, "0"))
         return ALGORITHMS;
     if(!strcmp(input, "DataStructures") || !strcmp(input, "1"))
@@ -11,6 +11,29 @@ BaseType getBaseType(char *input){
     if(!strcmp(input, "Problems") || !strcmp(input, "2"))
         return PROBLEMS;
     return TOTAL_BASE_TYPES;
+}
+
+void MainHelp::printUsage(){
+    std::cout << "Usage: <bin> <BaseType> <SubTypes>...\n"
+              << "BaseTypes:\n"
+              << "0. Algorithms\n"
+              << "1. DataStructures\n"
+              << "2. Problems\n";
+}
+
+MainHelp* MainHelp::getSubClass(char *input){
+    BaseType baseType = getBaseType(input);
+    switch(baseType)
+    {
+        case ALGORITHMS:
+            break;
+        case DATA_STRUCTURES:
+            break;
+        case PROBLEMS:
+            break;
+    }
+    printUsage();
+    return nullptr;
 }
 
 void performSortOperation(std::string subType){
@@ -32,8 +55,7 @@ void performSortOperation(std::string subType){
 
 int main(int argc, char* argv[]){
     if(argc > 1){
-        BaseType baseType = getBaseType(argv[1]);
-        
+        MainHelp* subClass = MainHelp::getSubClass(argv[1]);
     }
 
     int testCaseCount;

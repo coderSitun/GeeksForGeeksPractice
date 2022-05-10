@@ -11,6 +11,12 @@ enum BaseType{
     TOTAL_BASE_TYPES
 };
 
-BaseType getBaseType(char *input);
+class MainHelp{
+private:
+    static BaseType getBaseType(char *input);
+    static void printUsage();
+public:
+    static MainHelp* getSubClass(char *input);
+};
 
 #endif
