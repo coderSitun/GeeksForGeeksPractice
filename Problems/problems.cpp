@@ -2,6 +2,7 @@
 #include<iostream>
 
 #include"problems.hpp"
+#include"dynamicProgramming.hpp"
 
 ProblemType ProblemsHelp::getProblemType(char *input){
     if(!strcmp(input, "DynamicProgramming") || !strcmp(input, "0"))
@@ -21,7 +22,7 @@ ProblemsHelp* ProblemsHelp::getSubClass(int argc, char *argv[]){
         switch(problemType)
         {
             case DYNAMIC_PROGRAMMING:
-                return 0;
+                return DynamicProgrammingHelp::getQuestionType(argc, argv);
         }
     }
     printUsage();
