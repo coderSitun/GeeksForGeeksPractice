@@ -10,12 +10,11 @@ enum ProblemType{
 
 class ProblemsHelp : public MainHelp{
 private:
-    ProblemType getProblemType(char *input);
-    void printUsage();
+    static ProblemType getProblemType(char *input);
+protected:
+    static void printUsage();
 public:
-    void getSubClass(char *input);
-    void workOut(char *input1);
-    void workOut(char *input1, char *input2);
+    static ProblemsHelp* getSubClass(int argc, char *argv[]);
 };
 
 #endif

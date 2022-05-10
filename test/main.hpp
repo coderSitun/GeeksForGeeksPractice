@@ -3,7 +3,7 @@
 
 #include "sort.hpp"
 
-enum BaseType{
+enum MainType{
     ALGORITHMS,
     DATA_STRUCTURES,
     PROBLEMS,
@@ -12,12 +12,12 @@ enum BaseType{
 
 class MainHelp{
 private:
-    static BaseType getBaseType(char *input);
-public:
+    static MainType getMainType(char *input);
+protected:
     static void printUsage();
-    static MainHelp* getSubClass(char *input);
-    virtual void workOut(char *input1) = 0;
-    virtual void workOut(char *input1, char *input2) = 0;
+public:
+    static MainHelp* getSubClass(int argc, char *argv[]);
+    virtual void execute() = 0;
 };
 
 #endif

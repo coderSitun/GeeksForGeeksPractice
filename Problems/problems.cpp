@@ -14,3 +14,16 @@ void ProblemsHelp::printUsage(){
     std::cout << "Problem Types:\n"
               << "0. DynamicProgramming\n";
 }
+
+ProblemsHelp* getSubClass(int argc, char *argv[]){
+    if(argc > 2){
+        ProblemType problemType = getProblemType(argv[2]);
+        switch(problemType)
+        {
+            case DYNAMIC_PROGRAMMING:
+                return 0;
+        }
+    }
+    printUsage();
+    return nullptr;
+}
