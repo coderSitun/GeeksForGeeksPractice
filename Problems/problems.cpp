@@ -3,7 +3,7 @@
 
 #include"problems.hpp"
 
-SubType ProblemsHelp::getSubType(char *input){
+ProblemType ProblemsHelp::getProblemType(char *input){
     if(!strcmp(input, "DynamicProgramming") || !strcmp(input, "0"))
         return DYNAMIC_PROGRAMMING;
     return TOTAL_SUB_TYPES;
