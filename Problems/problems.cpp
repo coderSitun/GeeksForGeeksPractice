@@ -15,7 +15,7 @@ void ProblemsHelp::printUsage(){
               << "0. DynamicProgramming\n";
 }
 
-ProblemsHelp* getSubClass(int argc, char *argv[]){
+ProblemsHelp* ProblemsHelp::getSubClass(int argc, char *argv[]){
     if(argc > 2){
         ProblemType problemType = getProblemType(argv[2]);
         switch(problemType)

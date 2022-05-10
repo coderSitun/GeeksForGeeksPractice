@@ -1,6 +1,8 @@
 #ifndef __MAIN
 #define __MAIN
 
+#include"problems.hpp"
+
 #include "sort.hpp"
 
 enum MainType{
