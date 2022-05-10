@@ -1,7 +1,6 @@
 #ifndef __MAIN
 #define __MAIN
 
-#include<cstring>
 #include "sort.hpp"
 
 enum BaseType{
@@ -14,6 +13,7 @@ enum BaseType{
 class MainHelp{
 private:
     static BaseType getBaseType(char *input);
+protected:
     static void printUsage();
 public:
     static MainHelp* getSubClass(char *input);
